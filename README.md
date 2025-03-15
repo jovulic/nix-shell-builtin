@@ -12,7 +12,7 @@ This is, however, not new functionality technically. You can already include the
 
 ## 📦 Installation
 
-Installation looks like applying the following changes to your nix configuration.
+Installation looks like applying the following changes to your nix configuration, assuming you are consuming the pacakge as a flake input (if you are building from source, you can evaluate the `plugin.nix` derivation directly).
 
 1. Build the `nix-shell-plugin`, using your system `nix` version.
 
