@@ -9,7 +9,9 @@
   ...
 }:
 stdenv.mkDerivation {
-  name = "nix-shell-plugin";
+  pname = "nix-shell-plugin";
+  version = "0.1.0";
+
   src = ./.;
 
   nativeBuildInputs = [
