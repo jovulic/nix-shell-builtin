@@ -25,6 +25,7 @@ my-nix-shell-plugin = nix-shell-plugin.override { nix = my-system-nix; };
 ```nix
 nix.extraOptions = ''
   plugins-files = ${my-nix-shell-plugin}/lib/nix/plugins/libnix-shell-plugin.so
+  enable-shell true
 ''
 ```
 
