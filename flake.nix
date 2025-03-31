@@ -47,7 +47,7 @@
                 runtimeInputs = [ pkgs.nix ];
                 text = ''
                   nix \
-                    --option plugin-files "$(nix build --no-link --print-out-paths)/lib/nix/plugins/libnix-shell-plugin.so" \
+                    --option plugin-files "$(nix build --no-link --print-out-paths)/lib/nix/plugins/libnix-shell-builtin.so" \
                     --option enable-shell true \
                     repl 
                 '';
@@ -62,7 +62,7 @@
                 runtimeInputs = [ pkgs.nix ];
                 text = ''
                   nix \
-                    --option plugin-files "$(nix build --no-link --print-out-paths)/lib/nix/plugins/libnix-shell-plugin.so" \
+                    --option plugin-files "$(nix build --no-link --print-out-paths)/lib/nix/plugins/libnix-shell-builtin.so" \
                     --option enable-shell true \
                     repl <<EOF
                   builtins.shell "echo 'test passed'"

@@ -9,7 +9,7 @@
   ...
 }:
 stdenv.mkDerivation {
-  pname = "nix-shell-plugin";
+  pname = "nix-shell-builtin";
   version = "1.0.0";
 
   src = ./.;

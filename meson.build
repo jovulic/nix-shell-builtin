@@ -1,5 +1,5 @@
 project(
-  'nix-shell-plugin',
+  'nix-shell-builtin',
   'cpp',
   version: '1.0.0',
   default_options: ['cpp_std=c++20'],
@@ -12,7 +12,7 @@ nix_store = dependency('nix-store', required: true)
 boost = dependency('boost', required: true)
 nlohmann_json = dependency('nlohmann_json')
 
-plugin_lib = shared_library('nix-shell-plugin',
+plugin_lib = shared_library('nix-shell-builtin',
   sources: ['plugin.cc'],
   dependencies: [nix_main, nix_expr, nix_store, boost, nlohmann_json],
   install: true

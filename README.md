@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-# Nix Shell Plugin
+# Nix Shell Builtin
 
 _A Nix plugin adding a shell builtin that runs shell commands._
 
@@ -14,22 +14,22 @@ This is, however, not new functionality technically. You can already include the
 
 Installation looks like applying the following changes to your nix configuration, assuming you are consuming the pacakge as a flake input (if you are building from source, you can evaluate the `plugin.nix` derivation directly).
 
-1. Build the `nix-shell-plugin`, using your system `nix` version.
+1. Build the `nix-shell-builtin` plugin, using your system `nix` version.
 
 ```nix
-my-nix-shell-plugin = nix-shell-plugin.override { nix = my-system-nix; };
+my-nix-shell-builtin = nix-shell-builtin.override { nix = my-system-nix; };
 ```
 
 2. Update the `nix.extraOptions` configuration.
 
 ```nix
 nix.extraOptions = ''
-  plugins-files = ${my-nix-shell-plugin}/lib/nix/plugins/libnix-shell-plugin.so
+  plugins-files = ${my-nix-shell-builtin}/lib/nix/plugins/libnix-shell-builtin.so
   enable-shell = true
 ''
 ```
 
-The reason it is more than just updating the `nix.extraOptions` option to include `plugins-files = [ ${nix-shell-plugin}/lib/nix/plugins/libnix-shell-plugin.so ]` is because all [nix plugins must be DSO compatible with the version of `nix` running on the system](https://nix.dev/manual/nix/2.24/command-ref/conf-file#conf-plugin-files). This way we ensure the version of `nix` running on your system is the same as the version of nix being used to build the plugin!
+The reason it is more than just updating the `nix.extraOptions` option to include `plugins-files = [ ${nix-shell-plugin}/lib/nix/plugins/libnix-shell-builtin.so ]` is because all [nix plugins must be DSO compatible with the version of `nix` running on the system](https://nix.dev/manual/nix/2.24/command-ref/conf-file#conf-plugin-files). This way we ensure the version of `nix` running on your system is the same as the version of nix being used to build the plugin!
 
 ## 🚀 Usage
 
@@ -55,7 +55,7 @@ nix develop
 
 ### Build
 
-We can build the `nix-shell-plugin` with the following command.
+We can build the `nix-shell-builtin` plugin with the following command.
 
 ```bash
 nix build
