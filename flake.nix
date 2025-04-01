@@ -3,42 +3,61 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.11";
-    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
+    { ... }@inputs:
+    let
+      inherit (inputs) nixpkgs;
+      inherit (inputs.nixpkgs) lib;
+      systems = [
+        "aarch64-linux"
+        "aarch64-darwin"
+        "x86_64-darwin"
+        "x86_64-linux"
+      ];
+      eachSystem =
+        f:
+        lib.genAttrs systems (
+          system:
+          f {
+            pkgs = nixpkgs.legacyPackages.${system};
+            inherit system;
+          }
+        );
+    in
     {
-      self,
-      nixpkgs,
-      flake-utils,
-    }:
-    flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-      {
-        devShells.default = pkgs.mkShell {
-          buildInputs = [
-            pkgs.meson
-            pkgs.ninja
-            pkgs.pkg-config
-            pkgs.nix.dev
-            pkgs.boost.dev
-            pkgs.nlohmann_json
-          ];
-          shellHook = ''
-            function setup() {
-              meson setup builddir $@
-              ln -sf builddir/compile_commands.json .
-            }
-            setup > /dev/null 2>&1
-          '';
-        };
-
-        packages.default = pkgs.callPackage ./plugin.nix { };
-
-        apps = {
+      devShells = eachSystem (
+        { pkgs, ... }:
+        {
+          default = pkgs.mkShell {
+            buildInputs = [
+              pkgs.meson
+              pkgs.ninja
+              pkgs.pkg-config
+              pkgs.nix.dev
+              pkgs.boost.dev
+              pkgs.nlohmann_json
+            ];
+            shellHook = ''
+              function setup() {
+                meson setup builddir $@
+                ln -sf builddir/compile_commands.json .
+              }
+              setup > /dev/null 2>&1
+            '';
+          };
+        }
+      );
+      packages = eachSystem (
+        { pkgs, ... }:
+        {
+          default = pkgs.callPackage ./plugin.nix { };
+        }
+      );
+      apps = eachSystem (
+        { pkgs, ... }:
+        {
           repl = {
             type = "app";
             program = "${
@@ -49,7 +68,7 @@
                   nix \
                     --option plugin-files "$(nix build --no-link --print-out-paths)/lib/nix/plugins/libnix-shell-builtin.so" \
                     --option enable-shell true \
-                    repl 
+                    repl
                 '';
               }
             }/bin/repl";
@@ -71,7 +90,7 @@
               }
             }/bin/test";
           };
-        };
-      }
-    );
+        }
+      );
+    };
 }
