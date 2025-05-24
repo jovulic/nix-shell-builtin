@@ -1,8 +1,8 @@
-#include "config-global.hh"
-#include "eval-error.hh"
-#include "eval.hh"
-#include "primops.hh"
-#include "value.hh"
+#include "nix/expr/eval-error.hh"
+#include "nix/expr/eval.hh"
+#include "nix/expr/primops.hh"
+#include "nix/expr/value.hh"
+#include "nix/util/config-global.hh"
 #include <cstdio>
 #include <memory>
 
