@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/jovulic/nix-shell-builtin/compare/v1.0.2...v2.0.0) (2025-05-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to nixpkgs 25.05 and support nix 2.28
+
+### Features
+
+* update to nixpkgs 25.05 and support nix 2.28 ([79dd2a5](https://github.com/jovulic/nix-shell-builtin/commit/79dd2a5d523d8e4e2b756c1d40216ce64959c997))
+
 ## [1.0.2](https://github.com/jovulic/nix-shell-builtin/compare/v1.0.1...v1.0.2) (2025-04-01)
 
 
