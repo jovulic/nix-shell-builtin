@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/jovulic/nix-shell-builtin/compare/v2.0.0...v2.0.1) (2025-10-30)
+
+
+### Features
+
+* **root:** add AGENTS.md ([2cf40e4](https://github.com/jovulic/nix-shell-builtin/commit/2cf40e47de854c890e5858713bf9b86f58961f3d))
+
 ## [2.0.0](https://github.com/jovulic/nix-shell-builtin/compare/v1.0.2...v2.0.0) (2025-05-24)
 
 
