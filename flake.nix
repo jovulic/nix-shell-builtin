@@ -2,7 +2,7 @@
   description = "A Nix plugin adding a shell builtin that runs shell commands.";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.05";
+    nixpkgs.url = "nixpkgs/nixos-25.11";
   };
 
   outputs =
@@ -36,6 +36,7 @@
               pkgs.meson
               pkgs.ninja
               pkgs.pkg-config
+              pkgs.nix
               pkgs.nix.dev
               pkgs.boost.dev
               pkgs.nlohmann_json
