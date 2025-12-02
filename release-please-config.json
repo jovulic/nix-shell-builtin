@@ -67,5 +67,9 @@
       "section": "General Changes"
     }
   ],
+  "extra-files": [
+    "plugin.nix",
+    "meson.build"
+  ],
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
 }

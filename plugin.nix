@@ -10,7 +10,7 @@
 }:
 stdenv.mkDerivation {
   pname = "nix-shell-builtin";
-  version = "2.0.2";
+  version = "2.0.1"; # x-release-please-version
 
   src = ./.;
 
