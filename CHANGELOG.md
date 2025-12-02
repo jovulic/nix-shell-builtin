@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.1.0](https://github.com/jovulic/nix-shell-builtin/compare/v2.0.1...v2.1.0) (2025-12-02)
+
+
+### Features
+
+* add justfile ([c5c1b11](https://github.com/jovulic/nix-shell-builtin/commit/c5c1b11a7f1876b6f6212c57e5c3f882600f41ca))
+* config release please to update meson.build and plugin.nix versions ([f72f333](https://github.com/jovulic/nix-shell-builtin/commit/f72f3334a4e51afa5d08de409583057e6bd9f455))
+* update to nixos-25.11 ([f3ce4cf](https://github.com/jovulic/nix-shell-builtin/commit/f3ce4cfb81ef67d59e6fc2e8df01358561519ec4))
+* update to use jovulic/release-please-action and custom version strategy ([1e3fc71](https://github.com/jovulic/nix-shell-builtin/commit/1e3fc717398a14bcd380d34e83e6b44edbad5499))
+
+
+### Bug Fixes
+
+* correctly reference source-custom versioning ([9cf4b59](https://github.com/jovulic/nix-shell-builtin/commit/9cf4b59ce7539d8725f66d1a835cf00ab0d00771))
+* define local nix.conf to avoid conflicts with system/user nix.conf ([a7a9c40](https://github.com/jovulic/nix-shell-builtin/commit/a7a9c40343f194af76d1471737c172488dc4fe5f))
+
+
+### General Changes
+
+* update version to 2.0.2 ([348cca5](https://github.com/jovulic/nix-shell-builtin/commit/348cca560ec32bf25d335969b1311efe618250f9))
+
 ## [2.0.1](https://github.com/jovulic/nix-shell-builtin/compare/v2.0.0...v2.0.1) (2025-10-30)
 
 
