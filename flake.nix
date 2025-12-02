@@ -32,6 +32,7 @@
         {
           default = pkgs.mkShell {
             buildInputs = [
+              pkgs.just
               pkgs.meson
               pkgs.ninja
               pkgs.pkg-config
