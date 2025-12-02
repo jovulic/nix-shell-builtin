@@ -3,7 +3,7 @@
     ".": {
       "changelog-path": "CHANGELOG.md",
       "release-type": "simple",
-      "versioning-strategy": "source-custom",
+      "versioning": "source-custom",
       "bump-minor-pre-major": false,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
@@ -72,5 +72,5 @@
     "plugin.nix",
     "meson.build"
   ],
-  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+  "$schema": "https://raw.githubusercontent.com/jovulic/release-please/main/schemas/config.json"
 }
