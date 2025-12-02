@@ -1,7 +1,7 @@
 project(
   'nix-shell-builtin',
   'cpp',
-  version: '2.1.0', # x-release-please-version
+  version: '2.1.1', # x-release-please-version
   default_options: ['cpp_std=c++20'],
   meson_version: '>=1.1.0',
 )
