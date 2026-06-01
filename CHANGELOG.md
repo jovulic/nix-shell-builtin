@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/jovulic/nix-shell-builtin/compare/v2.1.1...v2.2.0) (2026-06-01)
+
+
+### Features
+
+* update to 26.05 ([6d86f24](https://github.com/jovulic/nix-shell-builtin/commit/6d86f245fb210b9269c97c1f1fb0808adfcdf07d))
+
 ## [2.1.1](https://github.com/jovulic/nix-shell-builtin/compare/v2.1.0...v2.1.1) (2025-12-02)
 
 
