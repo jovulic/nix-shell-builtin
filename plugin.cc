@@ -53,7 +53,7 @@ static void prim_shell(EvalState &state, const PosIdx pos, Value **args,
     auto command =
         state.forceString(*args[0], pos, "expected a string argument");
     auto output = exec_shell_command(command);
-    v.mkString(output);
+    v.mkString(output, state.mem);
   } else {
     state.error<EvalError>("the 'shell' primop is disabled")
         .atPos(pos)
@@ -61,10 +61,10 @@ static void prim_shell(EvalState &state, const PosIdx pos, Value **args,
   }
 }
 
-static RegisterPrimOp rp({
+static RegisterPrimOp rp(PrimOp{
     .name = "__shell",
     .args = {"c"},
-    .fun = prim_shell,
+    .impl = prim_shell,
 });
 
 // Plugin entrypoint (keeping it to remind me that it exists).

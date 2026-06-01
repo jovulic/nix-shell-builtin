@@ -2,7 +2,7 @@
   description = "A Nix plugin adding a shell builtin that runs shell commands.";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-26.05";
   };
 
   outputs =
