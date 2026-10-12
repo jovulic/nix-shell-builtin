@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/jovulic/nix-shell-builtin/compare/v2.2.0...v2.2.1) (2026-10-12)
+
+
+### Documentation
+
+* remove emojis ([78b2e8d](https://github.com/jovulic/nix-shell-builtin/commit/78b2e8d2d90e098169b11bc61317b920f3bbd182))
+
 ## [2.2.0](https://github.com/jovulic/nix-shell-builtin/compare/v2.1.1...v2.2.0) (2026-06-01)
 
 
